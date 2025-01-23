@@ -5,68 +5,79 @@
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
                 url('/public/background.jpg') no-repeat center center fixed;
     background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
 
+/* Eliminar margen y desbordamiento del cuerpo */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Contenedor del formulario */
 .login_page .form_container {
     width: 100%;
-    max-width: 800px;
-    padding: 80px;
+    max-width: 600px;
+    padding: 30px 50px; /* Ajuste para mejorar el centrado interno */
     background: rgba(255, 255, 255, 0.97);
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     text-align: center;
-    margin: 40px auto;
     box-sizing: border-box;
 }
 
 .login_page .logo_container {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     background: url('/public/logo.png') no-repeat center center;
     background-size: contain;
-    margin: 0 auto 30px auto;
+    margin: 0 auto 25px auto;
 }
 
 .login_page .title {
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: bold;
     color: #212121;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .login_page .subtitle {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #555;
-    margin-bottom: 45px;
-    margin-top: 15px;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
 .login_page .input_container {
     position: relative;
     width: 100%;
-    margin-bottom: 35px;
+    margin-bottom: 25px;
     text-align: left;
-    box-sizing: border-box;
 }
 
 .login_page .input_label {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
     color: #333;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     display: block;
 }
 
 .login_page .input_field {
-    width: calc(100% - 70px);
-    padding: 18px 70px;
-    border-radius: 10px;
+    width: calc(100% - 50px);
+    padding: 15px 50px;
+    border-radius: 8px;
     border: 1px solid #ddd;
-    font-size: 1.1rem;
+    font-size: 1rem;
     outline: none;
     transition: all 0.3s ease;
     background-color: #f9f9f9;
@@ -85,26 +96,26 @@
 
 .login_page .input_container .icon {
     position: absolute;
-    left: 30px;
-    top: 50%;
+    left: 20px;
+    top: 66%;
     transform: translateY(-50%);
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     color: #777;
 }
 
 .login_page .sign-in_btn {
     width: 100%;
-    padding: 20px;
+    padding: 15px;
     border: none;
-    border-radius: 10px;
+    border-radius: 8px;
     background: #044183;
     color: white;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s ease;
-    margin-top: 25px;
+    margin-top: 20px;
 }
 
 .login_page .sign-in_btn:hover {
@@ -113,8 +124,10 @@
 
 .login_page .extra_links {
     display: flex;
-    justify-content: space-between;
-    margin-top: 35px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    gap: 20px; /* Espacio entre los enlaces */
     padding: 0 20px;
 }
 
@@ -122,7 +135,7 @@
 .login_page .register-link {
     color: #044183;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
 }
@@ -130,4 +143,28 @@
 .login_page .forgot-password:hover, 
 .login_page .register-link:hover {
     text-decoration: underline;
+}
+
+/* Responsividad para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .login_page .extra_links {
+        flex-direction: column; /* Poner enlaces en columna en pantallas pequeñas */
+        gap: 10px;
+    }
+
+    .login_page .form_container {
+        max-width: 90%;
+        padding: 40px;
+    }
+
+    .login_page .input_field {
+        font-size: 0.9rem;
+        padding: 12px 40px;
+        width: calc(100% - 40px);
+    }
+
+    .login_page .sign-in_btn {
+        font-size: 1rem;
+        padding: 15px;
+    }
 }
